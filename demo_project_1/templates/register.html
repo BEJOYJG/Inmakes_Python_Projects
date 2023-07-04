@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <style>
+        .h4{ color:maroon;padding-bottom:30px;padding-top:50px;}
+        h4,table{ padding-left:60px;}
+        #submit{ text-align:center;padding-top:10px;}
+        #reg{background:LimeGreen;font-family:Monospace;cursor: pointer;padding:5px;}
+        #reg:hover {background-color:  #3e8e41;}
+
+    </style>
+</head>
+<body style="background-image:url({% static 'images/RB1.jpg' %})">
+<form method="post" action="register">
+     {% csrf_token %}
+<h4 class="h4">Please enter the following details to complete the registration process</h4>
+  <fieldset style="width:30%;background-image:url({% static 'images/RB2.jpg' %})">
+      <legend style="text-align:center;color:darkred"><h3>Registration</h3></legend>
+    <table>
+      <tr>
+            <td><label><b>Username:</b></label></td>
+            <td><input type="text" name="username" placeholder="Enter your username"></td>
+      </tr>
+      <tr>
+        <td><label><b>First name:</b></label></td>
+        <td><input type="text" name="first_name" placeholder="Enter your first name"></td>
+       </tr>
+       <tr>
+        <td><label><b>Last name:</b></label></td>
+        <td><input type="text" name="last_name" placeholder="Enter your last name"></td>
+       </tr>
+       <tr>
+          <td><label><b>Email:</b></label></td>
+          <td><input type="email" name="email" placeholder="Enter your email"></td>
+       </tr>
+
+
+       <tr>
+            <td><label><b>Password:</b></label></td>
+            <td><input type="password" name="password" placeholder="Enter your password"></td>
+       </tr>
+       <tr>
+            <td><label><b>Confirm password:</b></label></td>
+            <td><input type="password" name="c_password" placeholder="Re-enter the password"></td>
+       </tr>
+<!--       <tr>-->
+<!--            <td colspan="2" style="padding-top:30px;">-->
+<!--                <input type="checkbox" name="checked" value="yes">-->
+<!--                <label style="color:red;">I agree the terms and conditions</label>-->
+<!--            </td>-->
+<!--       </tr>-->
+       <tr>
+          <td colspan="2" style="text-align:center;">
+              <button type="submit" id="reg">Register</button>
+          </td>
+       </tr>
+
+    </table>
+   </fieldset>
+</form>
+{% for msg in messages %}
+<!--    <div class="alert alert-dismissible alert-success">-->
+<!--      <button type="button" class="close" data-dismiss="alert">-->
+<!--      ×-->
+<!--      </button>-->
+      <strong style="color:red;">{{msg}}</strong>
+<!--    </div>-->
+{% endfor %}
+</body>
+</html>

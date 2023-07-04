@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        #log{background:LimeGreen;font-family:Monospace;cursor: pointer;padding:5px;}
+        #log:hover {background-color: #3e8e41;}
+    </style>
+</head>
+<body style="background-image:url({% static 'images/b1.webp' %})">
+<form action="login" method="post" style="padding-top:40px;padding-left:10px;">
+  {% csrf_token %}
+   <fieldset style="width:27%;background-image:url({% static 'images/LB2.jpg' %})">
+       <legend style="text-align:center;color:maroon"><strong>Login</strong></legend>
+    <table style="padding-left:60px;">
+      <tr>
+            <td><label>Username:</label></td>
+            <td><input type="text" name="username" placeholder="Enter your username"></td>
+      </tr>
+      <tr>
+            <td><label>Password:</label></td>
+            <td><input type="password" name="password" placeholder="Enter your password"></td>
+       </tr>
+       <tr>
+          <td colspan="2" style="text-align:center;">
+              <button type="submit" id="log">Login</button>
+          </td>
+       </tr>
+     </table>
+   </fieldset>
+</form>
+{% for msg in messages %}
+<!--    <div class="alert alert-dismissible alert-success">-->
+<!--      <button type="button" class="close" data-dismiss="alert">-->
+<!--      ×-->
+<!--      </button>-->
+      <strong style="color:red;">{{msg}}</strong>
+<!--    </div>-->
+{% endfor %}
+</body>
+</html>
