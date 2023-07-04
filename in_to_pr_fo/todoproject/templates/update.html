@@ -1,0 +1,30 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--</body>-->
+<!--</html>-->
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">
+            Task Update
+        </div>
+        <div class="class-body">
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit">Confirm and update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="padding-top:17%;padding-left:37%;padding-right:37%;">
+<form method="post">
+   {% csrf_token %}
+ <fieldset style="border:3px solid black;background-color:PapayaWhip;">
+<h3 style="text-align:center;">Are you sure this task is done?</h3><br>
+<button type="submit" class="btn btn-warning" style="cursor:pointer;display:block;margin:auto;">YES</button><br>
+
+ </fieldset>
+</form>
+
+</div>
+
+{% endblock %}
