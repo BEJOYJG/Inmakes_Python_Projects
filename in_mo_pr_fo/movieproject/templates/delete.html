@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div style="padding-top:17%;padding-left:37%;padding-right:37%;">
+<form method="post" >
+   {% csrf_token %}
+ <fieldset style="border:3px solid black;">
+<h3 style="text-align:center;">Are you sure to delete this movie?</h3>
+<button type="submit" style="cursor:pointer;display:block;margin:auto;">Confirm and delete</button>
+
+ </fieldset>
+</form>
+
+</div>
+
+{% endblock %}

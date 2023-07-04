@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<form method="post" enctype="multipart/form-data" style="padding-left:60px; padding-top:50px;width:40%;">
+
+    {% csrf_token %}
+
+  <fieldset style="border:3px solid black;">
+  <legend style="text-align:center;">Enter the following details to make new entry</legend>
+  <table style="text-align:left;padding-left:100px;">
+      <tr>
+            <td style="padding-left:100px;"><label>Movie name:</label></td>
+            <td style="padding-top:7px;padding-bottom:10px;"><input type="text" name="name" placeholder="Enter movie name"></td>
+      </tr>
+      <tr>
+            <td style="padding-left:100px;"><label>Movie description:</label></td>
+            <td style="padding-top:7px;padding-bottom:10px;"><input type="text" name="desc" placeholder="Enter movie description"></td>
+      </tr>
+      <tr>
+            <td style="padding-left:100px;"><label>Released year:</label></td>
+            <td style="padding-top:7px;padding-bottom:10px;"><input type="number" name="year" placeholder="Enter released year"></td>
+      </tr>
+      <tr>
+            <td style="padding-left:100px;"><label>Movie shot:</label></td>
+            <td style="padding-bottom:40px;padding-top:7px;"><input type="file" name="img"></td>
+      </tr>
+      <tr>
+             <td colspan="2" style="text-align:center;padding-bottom:25px;">
+              <button type="submit" style="background:LimeGreen;font-family:Monospace;cursor: pointer;">Submit Entry</button>
+             </td>
+      </tr>
+  </table>
+  </fieldset>
+
+</form>
+{% endblock %}
